@@ -1,0 +1,14 @@
+:root {
+  --pink:    #f4a7c3;
+  --purple:  #9b7fd4;
+  --lavender:#c9b8f0;
+  --blue:    #6a9fd8;
+  --dark:    #2d1b4e;
+  --light:   #fdf0f8;
+}
+
+body {
+  background-color: var(--light);
+  font-family: 'Press Start 2P', monospace;
+  color: var(--dark);
+}
