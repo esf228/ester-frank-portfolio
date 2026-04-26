@@ -1,14 +1,426 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="'width=device-width, initial-scale=1.0" />
-        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-        <title>Ester's Portfolio</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <h1 style="text-align: center;">Thanks for stopping by!</h1>
-        <h2 style="text-align: center;">Welcome to my portfolio</h2>
-    </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>esterfrank.exe — portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+<div id="bg-stars"></div>
+
+<!-- ─── Nav ──────────────────────────────────────── -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">esterfrank.exe</a>
+  <div class="nav-links">
+    <a href="#about-wrap">about</a>
+    <a href="#skills-wrap">skills</a>
+    <a href="#projects-wrap">projects</a>
+    <a href="#blog-wrap">blog</a>
+    <a href="#" class="nav-resume" id="nav-resume-trigger">resume ↓</a>
+  </div>
+</nav>
+
+<!-- ─── Hero ─────────────────────────────────────── -->
+<section id="hero">
+  <div class="sky-bg"></div>
+
+  <!-- Stars -->
+  <div class="star" style="width:4px;height:4px;top:12%;left:8%;--dur:2.2s;--delay:0s;"></div>
+  <div class="star" style="width:3px;height:3px;top:18%;left:22%;--dur:3s;--delay:0.4s;"></div>
+  <div class="star" style="width:5px;height:5px;top:8%;left:45%;--dur:2.5s;--delay:0.8s;"></div>
+  <div class="star" style="width:3px;height:3px;top:25%;left:58%;--dur:2s;--delay:0.2s;"></div>
+  <div class="star" style="width:4px;height:4px;top:14%;left:75%;--dur:3.2s;--delay:1s;"></div>
+  <div class="star" style="width:3px;height:3px;top:30%;left:88%;--dur:2.8s;--delay:0.6s;"></div>
+  <div class="star" style="width:6px;height:6px;top:6%;left:92%;--dur:1.8s;--delay:0.3s;opacity:0.7;"></div>
+
+  <!-- Moon -->
+  <div class="moon" id="moon"></div>
+
+  <!-- Floating pixel decorations -->
+  <div class="pixel-deco" style="top:20%;left:15%;--dur:3.5s;--delay:0s;background:#E8B0CC;"></div>
+  <div class="pixel-deco" style="top:35%;right:22%;--dur:4s;--delay:1s;width:6px;height:6px;background:#B0C8E8;"></div>
+  <div class="pixel-deco" style="top:55%;left:8%;--dur:5s;--delay:0.5s;width:5px;height:5px;background:#A8D4B0;"></div>
+
+  <!-- Cloud layer 1 — back, slowest (0.25×) -->
+  <div class="cloud-layer" id="cloud-layer-1" style="z-index:2;">
+    <div class="cloud cloud-1"></div>
+    <div class="cloud cloud-2"></div>
+  </div>
+
+  <!-- Cloud layer 2 — middle (0.45×) -->
+  <div class="cloud-layer" id="cloud-layer-2" style="z-index:3;">
+    <div class="cloud cloud-3"></div>
+    <div class="cloud cloud-4"></div>
+  </div>
+
+  <!-- Cloud layer 3 — front, fastest (0.65×) -->
+  <div class="cloud-layer" id="cloud-layer-3" style="z-index:4;">
+    <div class="cloud cloud-5"></div>
+  </div>
+
+  <!-- Hero content -->
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-greeting">✦ Thanks for stopping by! ✦</div>
+      <div class="hero-name">Ester Frank</div>
+      <div class="hero-role">CS + Business Sophomore &nbsp;·&nbsp; Class of 2028 &nbsp;·&nbsp; Lehigh University</div>
+      <div class="hero-bio">I build things at the intersection of technology and business — passionate about product, startups, and creating software that's both functional and interesting.</div>
+      <div class="hero-chips">
+        <span class="chip">Based in CO</span>
+        <span class="chip">CS + Business</span>
+        <span class="chip chip-open">✦ open to internships</span>
+      </div>
+      <div class="hero-btns">
+        <a href="#projects-wrap" class="btn-primary">✦ see my work</a>
+        <a href="#contact-wrap" class="btn-ghost">✦ say hello</a>
+      </div>
+    </div>
+    <div class="hero-char">
+      <div class="sprite-box">
+        <img src="homepage_pic.jpeg" alt="Ester Frank" class="sprite-photo">
+      </div>
+      <div class="status-pill">online ✦</div>
+    </div>
+  </div>
+
+  <!-- Pixel city skyline -->
+  <div class="pixel-skyline">
+    <div class="bldg wp"     style="height:55px;flex:5"></div>
+    <div class="bldg ant"    style="height:96px;flex:3"></div>
+    <div class="bldg ww ant" style="height:144px;flex:6"></div>
+    <div class="bldg wp"     style="height:70px;flex:4"></div>
+    <div class="bldg"        style="height:44px;flex:5"></div>
+    <div class="bldg wp ant" style="height:120px;flex:3"></div>
+    <div class="bldg ww"     style="height:80px;flex:5"></div>
+    <div class="bldg"        style="height:36px;flex:4"></div>
+    <div class="bldg wp ant" style="height:112px;flex:6"></div>
+    <div class="bldg wp"     style="height:58px;flex:3"></div>
+    <div class="bldg ww"     style="height:88px;flex:5"></div>
+    <div class="bldg"        style="height:46px;flex:4"></div>
+    <div class="bldg ant"    style="height:132px;flex:6"></div>
+    <div class="bldg wp"     style="height:66px;flex:4"></div>
+    <div class="bldg ww"     style="height:94px;flex:3"></div>
+    <div class="bldg"        style="height:50px;flex:5"></div>
+    <div class="bldg wp"     style="height:76px;flex:4"></div>
+    <div class="bldg"        style="height:42px;flex:5"></div>
+  </div>
+
+  <div class="scroll-hint">
+    <span>scroll</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+
+<!-- ─── About ────────────────────────────────────── -->
+<div id="about-wrap">
+  <section>
+    <div class="section-tag reveal">// 01</div>
+    <div class="section-title reveal reveal-delay-1">about me</div>
+    <div class="about-grid">
+      <div class="reveal reveal-delay-2" style="display:flex;flex-direction:column;gap:14px;">
+        <div class="about-card">
+          <div class="about-card-label">bio</div>
+          <div class="about-card-content">Sophomore studying CS and Business, drawn to becoming a global communicator and developer. I love finding solutions to real problems, and gaining some new skills in the process. I’m specifically drawn to storytelling through data. I’m eager to know how the world around us works, and I want to turn models and theory into something that explains the “why” behind the “what.” While interested in looking at the past, my true goal is to find out what the future can look like, and what role I can play in creating a better society for all.</div>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-2 profile-win">
+        <div class="win-bar">
+          <div class="win-dot" style="background:#FF6B6B;"></div>
+          <div class="win-dot" style="background:#FFD166;"></div>
+          <div class="win-dot" style="background:#06D6A0;"></div>
+          <span class="win-title">profile.exe</span>
+        </div>
+        <div class="xp-body">
+          <div class="xp-mbti">INTP · she/her · creative builder · lifelong learner </div>
+          <div class="xp-row">
+            <div class="xp-col">
+              <div class="xp-col-title">likes.exe</div>
+              <div class="xp-item"></div>
+              <div class="xp-item"></div>
+              <div class="xp-item"></div>
+              <div class="xp-item"></div>
+              <div class="xp-item"></div>
+            </div>
+            <div class="xp-col">
+              <div class="xp-col-title">dislikes.exe</div>
+              <div class="xp-item"></div>
+              <div class="xp-item"></div>
+              <div class="xp-item"></div>
+              <div class="xp-item"></div>
+              <div class="xp-item"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ─── Skills ───────────────────────────────────── -->
+<div id="skills-wrap">
+  <section>
+    <div class="section-tag reveal">// 02</div>
+    <div class="section-title reveal reveal-delay-1">skills</div>
+    <div class="skills-grid">
+      <div class="skill-card reveal reveal-delay-2">
+        <div class="skill-card-title">languages</div>
+        <div class="skill-row">
+          <span class="skill-name">Python</span>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="88"></div></div>
+          <span class="skill-pct">88%</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name">JavaScript</span>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="75"></div></div>
+          <span class="skill-pct">75%</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name">Java</span>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="65"></div></div>
+          <span class="skill-pct">65%</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name">SQL</span>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="70"></div></div>
+          <span class="skill-pct">70%</span>
+        </div>
+      </div>
+      <div class="skill-card reveal reveal-delay-3">
+        <div class="skill-card-title">tools & frameworks</div>
+        <div class="skill-row">
+          <span class="skill-name">React</span>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="72" style="background:#C4A8E8;"></div></div>
+          <span class="skill-pct">72%</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name">Figma</span>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="80" style="background:#C4A8E8;"></div></div>
+          <span class="skill-pct">80%</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name">Git</span>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="82" style="background:#C4A8E8;"></div></div>
+          <span class="skill-pct">82%</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name">Excel / Sheets</span>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="85" style="background:#C4A8E8;"></div></div>
+          <span class="skill-pct">85%</span>
+        </div>
+      </div>
+      <div class="skill-card reveal reveal-delay-2" style="grid-column:1/-1;">
+        <div class="skill-card-title">coursework</div>
+        <div class="coursework-tags">
+          <span class="course-tag tag-cs">Data Structures & Algorithms</span>
+          <span class="course-tag tag-biz">Intro to Finance</span>
+          <span class="course-tag tag-cs">Discrete Math</span>
+          <span class="course-tag tag-biz">Managerial Accounting</span>
+          <span class="course-tag tag-cs">Software Engineering</span>
+          <span class="course-tag tag-biz">Marketing</span>
+          <span class="course-tag tag-biz">Microeconomics</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ─── Projects ──────────────────────────────────── -->
+<div id="projects-wrap">
+  <section>
+    <div class="section-tag reveal">// 03</div>
+    <div class="section-title reveal reveal-delay-1">projects</div>
+    <div class="proj-filters reveal reveal-delay-2">
+      <button class="proj-filter active" onclick="filterProjects(this,'all')">all</button>
+      <button class="proj-filter" onclick="filterProjects(this,'cs')">CS / eng</button>
+      <button class="proj-filter" onclick="filterProjects(this,'biz')">business</button>
+      <button class="proj-filter" onclick="filterProjects(this,'des')">design</button>
+    </div>
+    <div class="proj-grid">
+      <div class="proj-card reveal reveal-delay-2" data-cat="cs">
+        <div class="proj-img cs">💻</div>
+        <div class="proj-body">
+          <span class="proj-badge badge-cs">CS / Eng</span>
+          <div class="proj-name">Coming soon</div>
+          <!-- <div class="proj-desc"></div> -->
+          <div class="proj-tech-row">
+            <!-- <span class="tech-tag">React</span><span class="tech-tag">Firebase</span><span class="tech-tag">Figma</span> -->
+          </div>
+          <div class="proj-links">
+            <!-- <button class="proj-link">GitHub</button>
+            <button class="proj-link">Live ↗</button> -->
+          </div>
+        </div>
+      </div>
+      <div class="proj-card reveal reveal-delay-3" data-cat="biz">
+        <div class="proj-img biz">📊</div>
+        <div class="proj-body">
+          <span class="proj-badge badge-biz">Business</span>
+          <div class="proj-name">Coming soon</div>
+          <!-- <div class="proj-desc"></div> -->
+          <div class="proj-tech-row">
+            <!-- <span class="tech-tag">Excel</span><span class="tech-tag">PowerPoint</span> -->
+          </div>
+          <div class="proj-links">
+            <!-- <button class="proj-link">Deck ↗</button> -->
+          </div>
+        </div>
+      </div>
+      <div class="proj-card reveal reveal-delay-4" data-cat="des">
+        <div class="proj-img des">🎨</div>
+        <div class="proj-body">
+          <span class="proj-badge badge-des">Design</span>
+          <div class="proj-name">Coming soon</div>
+          <!-- <div class="proj-desc"></div> -->
+          <div class="proj-tech-row">
+            <!-- <span class="tech-tag">Figma</span><span class="tech-tag">UX Research</span> -->
+          </div>
+          <div class="proj-links">
+            <!-- <button class="proj-link">Prototype ↗</button> -->
+          </div>
+        </div>
+      </div>
+      <div class="proj-card reveal reveal-delay-2" data-cat="cs">
+        <div class="proj-img cs">🤖</div>
+        <div class="proj-body">
+          <span class="proj-badge badge-cs">CS / Eng</span>
+          <div class="proj-name">Coming soon</div>
+          <!-- <div class="proj-desc"></div> -->
+          <div class="proj-tech-row">
+            <!-- <span class="tech-tag">Python</span><span class="tech-tag">NLTK</span><span class="tech-tag">Pandas</span> -->
+          </div>
+          <div class="proj-links">
+            <!-- <button class="proj-link">GitHub</button> -->
+          </div>
+        </div>
+      </div>
+      <div class="proj-card reveal reveal-delay-3" data-cat="biz">
+        <div class="proj-img biz">💡</div>
+        <div class="proj-body">
+          <span class="proj-badge badge-biz">Business</span>
+          <div class="proj-name">Coming soon</div>
+          <!-- <div class="proj-desc"></div> -->
+          <div class="proj-tech-row">
+            <!-- <span class="tech-tag"></span><span class="tech-tag"></span> -->
+          </div>
+          <div class="proj-links">
+            <!-- <button class="proj-link">View ↗</button> -->
+          </div>
+        </div>
+      </div>
+      <div class="proj-card reveal reveal-delay-4" data-cat="des">
+        <div class="proj-img des">✦</div>
+        <div class="proj-body">
+          <span class="proj-badge badge-des">Design</span>
+          <div class="proj-name">This Portfolio</div>
+          <div class="proj-desc"></div>
+          <div class="proj-tech-row">
+            <span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JS</span>
+          </div>
+          <div class="proj-links">
+            <button class="proj-link">Source</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ─── Blog ─────────────────────────────────────── -->
+<div id="blog-wrap">
+  <section>
+    <div class="section-tag reveal">// 04</div>
+    <div class="section-title reveal reveal-delay-1">blog</div>
+    <div class="blog-win reveal reveal-delay-2">
+      <div class="blog-win-bar">
+        <div class="blog-win-dot" style="background:#FF6B6B;"></div>
+        <div class="blog-win-dot" style="background:#FFD166;"></div>
+        <div class="blog-win-dot" style="background:#06D6A0;"></div>
+        <span class="blog-win-title">BLOG.EXE — thoughts &amp; notes</span>
+      </div>
+      <div class="blog-win-body">
+        <div class="blog-post">
+          <div class="blog-date">Apr 25</div>
+          <div class="blog-content">
+            <div class="blog-title">What I learned at my first hackathon</div>
+            <div class="blog-excerpt">Coming soon</div>
+            <span class="blog-tag">hackathon</span>
+          </div>
+          <div class="blog-arrow">→</div>
+        </div>
+      </div>
+      <div class="blog-win-body">
+        <div class="blog-post">
+          <div class="blog-date">Apr 25</div>
+          <div class="blog-content">
+            <div class="blog-title">Attending Harvard WECode</div>
+            <div class="blog-excerpt">Coming soon</div>
+            <span class="blog-tag">conferences</span>
+          </div>
+          <div class="blog-arrow">→</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ─── Contact ───────────────────────────────────── -->
+<div id="contact-wrap">
+  <section>
+    <div class="section-tag reveal">// 05</div>
+    <div class="section-title reveal reveal-delay-1" style="color:#f0e4f8;">say hello ✦</div>
+    <div class="contact-sub reveal reveal-delay-2">Always down to chat about projects, internships, cool ideas, or literally anything. My inbox is open and I actually reply.</div>
+    <div class="contact-grid">
+      <a href="mailto:esterf1@icloud.com" class="contact-card reveal reveal-delay-1">
+        <span class="contact-icon">✉</span>
+        <div class="contact-label">email</div>
+        <div class="contact-val">esterf1@icloud.com</div>
+      </a>
+      <a href="https://www.linkedin.com/in/ester-frank" target="_blank" rel="noopener noreferrer" class="contact-card reveal reveal-delay-2">
+        <span class="contact-icon">◆</span>
+        <div class="contact-label">LinkedIn</div>
+        <div class="contact-val">www.linkedin.com/in/ester-frank</div>
+      </a>
+      <a href="https://github.com/esf228" target="_blank" rel="noopener noreferrer" class="contact-card reveal reveal-delay-3">
+        <span class="contact-icon">◉</span>
+        <div class="contact-label">GitHub</div>
+        <div class="contact-val">github.com/esf228</div>
+      </a>
+      <a href="#" class="contact-card reveal reveal-delay-4" id="resume-trigger">
+        <span class="contact-icon">↓</span>
+        <div class="contact-label">resume</div>
+        <div class="contact-val">view my resume</div>
+      </a>
+    </div>
+  </section>
+</div>
+
+<!-- ─── Footer ───────────────────────────────────── -->
+<footer>
+  <div class="footer-logo">esterfrank.exe</div>
+  <div class="footer-text">designed & built by me · 2025 · made with ♡</div>
+</footer>
+
+<button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- ─── Resume modal ──────────────────────────────── -->
+<div id="resume-modal" class="resume-modal-overlay" aria-modal="true" role="dialog" hidden>
+  <div class="resume-modal-box">
+    <div class="resume-modal-bar">
+      <span class="resume-modal-title">resume.exe</span>
+      <div class="resume-modal-actions">
+        <a id="resume-download" href="resume.pdf" download class="resume-btn">↓ download</a>
+        <button class="resume-btn resume-close" id="resume-close">✕ close</button>
+      </div>
+    </div>
+    <iframe id="resume-frame" src="resume.pdf" class="resume-frame" title="Ester Frank Resume"></iframe>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
 </html>
